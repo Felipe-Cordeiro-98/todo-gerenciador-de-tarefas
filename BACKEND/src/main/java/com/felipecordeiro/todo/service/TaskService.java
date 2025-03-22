@@ -60,4 +60,10 @@ public class TaskService {
         }
         repository.deleteById(id);
     }
+
+    @Transactional
+    public void alterCompleted(Long id) {
+        Task entity = repository.getReferenceById(id);
+        entity.setCompleted(!entity.isCompleted());
+    }
 }
