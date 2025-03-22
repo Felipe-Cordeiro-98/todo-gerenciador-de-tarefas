@@ -47,4 +47,10 @@ public class TaskController {
         service.delete(id);
         return ResponseEntity.noContent().build();
     }
+
+    @PatchMapping(value = "/{id}/completed")
+    public ResponseEntity<Void> alterCompleted(@PathVariable Long id) {
+        service.alterCompleted(id);
+        return ResponseEntity.noContent().build();
+    }
 }
